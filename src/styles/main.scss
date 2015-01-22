@@ -1,1 +1,80 @@
 @import "lib/normalize";
+
+body {
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+}
+
+.section-container {
+  bottom: 0;
+  position: absolute;
+  top: 30px;
+  transform: translateY(0);
+  -webkit-transform: translateY(0);
+  transition: all 1s;
+  -webkit-transition: all 1s;
+  transition-timing-function: cubic-bezier(.77,0,.175,1);
+  -webkit-transition-timing-function: cubic-bezier(.77,0,.175,1);
+  width: 100%;
+  z-index: 2;
+}
+
+nav {
+  background: white;
+  border-bottom: solid 1px black;
+  height: 30px;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  z-index: 10;
+}
+
+section {
+  font-size: 36px;
+  font-weight: bold;
+  height: 100%;
+}
+
+.pane-wrapper {
+  height: 100%;
+  position: relative;
+  width: 100%;
+  transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transition: all 1s;
+  -webkit-transition: all 1s;
+  transition-timing-function: cubic-bezier(.77,0,.175,1);
+  -webkit-transition-timing-function: cubic-bezier(.77,0,.175,1);
+}
+
+.pane {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  &.two {
+    left: 100%;
+    background: #CCC;
+  }
+}
+
+.next-page {
+  bottom: 0;
+  left: 50%;
+  padding: 10px;
+  position: fixed;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+}
+
+$pages: 1 2 3 4;
+@each $page in $pages {
+  $i: index($pages, $page);
+  section.page-#{$page} {
+    $color: $i * 64 - 1;
+    background: rgb($color,$color,$color);
+  }
+}
+

@@ -3,10 +3,26 @@
   %head
     %meta{ name: "viewport", content: "width=device-width,user-scalable=no,maximum-scale=1.0,initial-scale=1.0"}
     %script{ src: "javascripts/lib/jquery-1.11.2.min.js" }
+    %script{ src: "javascripts/lib/sammy-latest.min.js" }
     %script{ src: "javascripts/lib/velocity.min.js" }
     %script{ src: "javascripts/lib/hammer.min.js" }
     %script{ src: "javascripts/app.js" }
     %link{rel: "stylesheet", type: "text/css", href: "styles/main.css"}
   %body
-    %h1
-      Content goes here!
+    %nav
+      NAV BAR
+    %button.next-page
+      NEXT
+    .section-container
+      %section.page-1
+        .pane-wrapper{data-pane: 0}
+          .pane
+            PAGE ONE, PANE ONE
+          .pane.two
+            PAGE ONE, PANE TWO
+      %section.page-2
+        PAGE TWO
+      %section.page-3
+        PAGE THREE
+      %section.page-4
+        PAGE FOUR
